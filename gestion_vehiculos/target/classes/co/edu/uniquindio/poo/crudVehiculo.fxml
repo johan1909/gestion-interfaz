@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.VehiculoViewController">
+    <children>
+      <SplitPane dividerPositions="0.5159574468085106" orientation="VERTICAL" prefHeight="617.0" prefWidth="489.0">
+         <items>
+            <!-- Panel superior con el formulario de vehículo -->
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="625.0">
+               <children>
+                  <Pane layoutX="61.0" layoutY="20.0" prefHeight="249.0" prefWidth="372.0" style="-fx-border-image-width: 1px;">
+                     <children>
+                        <Label layoutX="112.0" layoutY="14.0" text="Gestión Vehículos">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="41.0" layoutY="58.0" prefHeight="27.0" prefWidth="81.0" text="Matricula:" />
+                        <Label layoutX="41.0" layoutY="92.0" prefHeight="27.0" prefWidth="70.0" text="Marca:" />
+                        <Label layoutX="41.0" layoutY="124.0" text="Modelo:" />
+                        <Label layoutX="41.0" layoutY="156.0" text="Tipo:" />
+                        <Label layoutX="41.0" layoutY="188.0" text="Tarifa:" />
+                        <Label layoutX="41.0" layoutY="220.0" text="Horas:" />
+                        
+                        <TextField fx:id="txtMatricula" layoutX="126.0" layoutY="59.0" prefHeight="25.0" prefWidth="194.0" />
+                        <TextField fx:id="txtMarca" layoutX="126.0" layoutY="93.0" prefHeight="25.0" prefWidth="194.0" />
+                        <TextField fx:id="txtModelo" layoutX="126.0" layoutY="125.0" prefHeight="25.0" prefWidth="194.0" />
+                        
+                        <ComboBox fx:id="cmbTipo" layoutX="126.0" layoutY="157.0" prefHeight="25.0" prefWidth="194.0" />
+                        
+                        <TextField fx:id="txtTarifa" layoutX="126.0" layoutY="189.0" prefHeight="25.0" prefWidth="194.0" />
+                        <TextField fx:id="txtHoras" layoutX="126.0" layoutY="221.0" prefHeight="25.0" prefWidth="194.0" />
+                        
+                        <Button fx:id="btbAgregarVehiculo" layoutX="64.0" layoutY="260.0" mnemonicParsing="false" onAction="#onAgregarVehiculo" text="Agregar Vehículo" />
+                        <Button fx:id="btnActualizarVehiculo" layoutX="223.0" layoutY="260.0" mnemonicParsing="false" onAction="#onActualizarVehiculo" text="Actualizar Vehículo" />
+                        
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+
+            <!-- Panel inferior con la tabla de vehículos -->
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="487.0">
+               <children>
+                  <TableView fx:id="tblListVehiculo" layoutX="14.0" layoutY="14.0" prefHeight="206.0" prefWidth="459.0">
+                    <columns>
+                      <TableColumn fx:id="tbcMatricula" prefWidth="89.0" text="Matrícula" />
+                      <TableColumn fx:id="tbcMarca" prefWidth="96.0" text="Marca" />
+                      <TableColumn fx:id="tbcModelo" prefWidth="89.0" text="Modelo" />
+                      <TableColumn fx:id="tbcTipo" prefWidth="88.0" text="Tipo" />
+                      <TableColumn fx:id="tbcTotal" prefWidth="96.0" text="Total" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnLimpiar" layoutX="133.0" layoutY="223.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                  <Button fx:id="btnEliminar" layoutX="274.0" layoutY="223.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
